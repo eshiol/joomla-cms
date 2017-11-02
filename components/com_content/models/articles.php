@@ -500,7 +500,7 @@ class ContentModelArticles extends JModelList
 							' THEN a.created ELSE a.publish_up END');
 						$query->where($db->quote(date("Y-m-t", strtotime($monthFilter)) . ' 23:59:59') . ' >= CASE WHEN a.publish_up = ' . $db->quote($db->getNullDate()) .
 							' THEN a.created ELSE a.publish_up END');
-					}					 
+					}
 					break;
 
 				case 'title':
