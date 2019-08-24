@@ -193,7 +193,6 @@ class ActionlogsHelper
 	{
 		static $links = array();
 
-		$message     = Text::_($log->message_language_key);
 		$messageData = json_decode($log->message, true);
 
 		// Special handling for translation extension name
@@ -202,6 +201,7 @@ class ActionlogsHelper
 			static::loadTranslationFiles($messageData['extension_name']);
 			$messageData['extension_name'] = Text::_($messageData['extension_name']);
 		}
+		$message = Text::_($log->message_language_key);
 
 		// Translating application
 		if (isset($messageData['app']))
